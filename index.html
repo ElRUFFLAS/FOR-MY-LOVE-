@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Brush, Script MT;
+            background-color: pink;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        #gifPregunta, #gifRespuesta {
+            width: 300px;
+            height: auto;
+        }
+        .boton {
+            font-size: 20px;
+            padding: 15px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+        #btnSi {
+            background-color: lightgreen;
+        }
+        #btnNo {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi San Valentín, Gloria?❤️</h1>
+    <img id="gifPregunta" src="c:\Users\rafam\Desktop\mochi-cat.gif" alt="GIF de pregunta">
+    <br>
+    <button id="btnSi" class="boton" onclick="aceptar()">Sí</button>
+    <button id="btnNo" class="boton" onclick="rechazar()">No</button>
+
+    <script>
+        let sizeSi = 20;
+        let sizeNo = 20;
+        
+        function aceptar() {
+            window.location.href = "aceptaste.html";
+        }
+        
+        function rechazar() {
+            let btnNo = document.getElementById("btnNo");
+            let btnSi = document.getElementById("btnSi");
+            
+            sizeNo -= 3;
+            sizeSi += 10;
+            
+            btnNo.style.fontSize = sizeNo + "px";
+            btnNo.style.padding = sizeNo / 2 + "px";
+            
+            btnSi.style.fontSize = sizeSi + "px";
+            btnSi.style.padding = sizeSi / 2 + "px";
+            
+            if (sizeNo <= 5) {
+                btnNo.style.display = "none";
+            }
+            if (sizeSi >= 200) {
+                btnSi.style.width = "100vw";
+                btnSi.style.height = "100vh";
+            }
+        }
+    </script>
+</body>
+</html>
